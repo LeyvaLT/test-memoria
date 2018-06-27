@@ -14,7 +14,7 @@ function comenzar() {
     setTimeout(function () {
         $("#juego1").css("display", "none");
         $("#test").css("display", "block");
-    }, 6000);
+    }, 10000);
 
 }
 
