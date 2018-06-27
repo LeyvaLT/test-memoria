@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="http://www.dadbox.mx/libs/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="css/styles.css">
     <meta charset="UTF-8">
     <title>Test de memoria</title>
 </head>
@@ -10,19 +11,239 @@
 
 <div id="main" class="main">
 
-</div>
+    <!--############################################## - Instrucciones - ############################################### -->
+    <div class="juego1" id="juego1">
+        <div class="instrucciones card" style="width: 750px;">
+            <img src="css/img/1.jpg" class="img card-img-top">
+            <div class="tarjeta card-body">
 
 
-<!--####  - Resultado Mandarlo desde JS -  ####-->
-<div class="alert alert-primary" role="alert">
-    <h3 class="alert-heading">Resultados</h3>
-    <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
-    <hr>
-    <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+                <h3 class="card-title">Instrucciones</h3>
+                <p class="card-text">A continuación se presentara una imagen por 5 segundos, debes de observar y tratar
+                    de recordar todos
+                    los detalles que te sean posible para después contestar el cuestionario.</p>
+                <hr>
+                <p class="card-text" style="display: inline-block; margin-right: 1rem;">¿Estas listo?</p>
+                <button type="button" class="btn btn-danger" style="display: inline-block;" onclick="comenzar()">
+                    Comenzar
+                </button>
+                <span class="segundero" id="segundero"></span>
+            </div>
+        </div>
+    </div>
+    <!--#################################################################################################################-->
+    <div id="alert"></div>
+
+    <div class="test card" id="test">
+        <!-- ############################################# - PREGUNTA 1 - #######################################-->
+
+        <ul class="list-group">
+            <li class="list-group-item">
+                <div class="preguntas">
+                    <h5>1.- ¿Cuántas niñ@s hay en el parque?</h5>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="P1" id="R1P1" value="option1">
+                        <label class="form-check-label" for="R1P1">
+                            6 niñ@s
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="P1" id="R2P1" value="option1">
+                        <label class="form-check-label" for="R2P1">
+                            4 niñ@s
+                        </label>
+                        <div class="r" id="R1"></div>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="P1" id="R3P1" value="option1">
+                        <label class="form-check-label" for="R3P1">
+                            5 niñ@s
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="P1" id="R4P1" value="option1">
+                        <label class="form-check-label" for="R4P1">
+                            3 niñ@s
+                        </label>
+
+                    </div>
+                </div>
+            </li>
+            <!-- ############################################# - PREGUNTA 2 - ###########################################-->
+            <li class="list-group-item">
+                <div class="preguntas">
+                    <h5>2.- ¿De que color es el vestido de la niña que juega con el papalote?</h5>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="P2" id="R1P2" value="option1">
+                        <label class="form-check-label" for="R1P2">
+                            <span class="badge badge-info" style="color:black">Azul</span>
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="P2" id="R2P2" value="option1">
+                        <label class="form-check-label" for="R2P2">
+                            <span class="badge badge-warning">Amarillo</span>
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="P2" id="R3P2" value="option1">
+                        <label class="form-check-label" for="R3P2">
+                            <span class="badge badge-light" style="color:black">Blanco</span>
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="P2" id="R4P2" value="option1">
+                        <label class="form-check-label" for="R4P2">
+                            <span class="badge badge-danger" style="color:black">Rojo</span>
+                        </label></label>
+                        <div class="r" id="R2"></div>
+                    </div>
+                </div>
+            </li>
+            <!-- ############################################# - PREGUNTA 3 - ###########################################-->
+            <li class="list-group-item">
+                <div class="preguntas">
+                    <h5>3.- ¿Qué letra lleva en la playera el niño que juega con la raqueta?</h5>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="P3" id="R1P3" value="option1">
+                        <label class="form-check-label" for="R1P3">
+                            Letra A
+                        </label></label>
+                        <div class="r" id="R3"></div>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="P3" id="R2P3" value="option1">
+                        <label class="form-check-label" for="R2P3">
+                            Letra X
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="P3" id="R3P3" value="option1">
+                        <label class="form-check-label" for="R3P3">
+                            Letra B
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="P3" id="R4P3" value="option1">
+                        <label class="form-check-label" for="R4P3">
+                            Letra N
+                        </label>
+                    </div>
+                </div>
+            </li>
+            <!-- ############################################# - PREGUNTA 4 - ###########################################-->
+            <li class="list-group-item">
+                <div class="preguntas">
+                    <h5>4- ¿De que color son los tenis del niño que anda en bicicleta?</h5>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="P4" id="R1P4" value="option1">
+                        <label class="form-check-label" for="R1P4">
+                            <span class="badge badge-danger" style="color:black">Rojos</span>
+                        </label>
+                        <div class="r" id="R4"></div>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="P4" id="R2P4" value="option1">
+                        <label class="form-check-label" for="R2P4">
+                            <span class="badge badge-dark">Negros</span>
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="P4" id="R3P4" value="option1">
+                        <label class="form-check-label" for="R3P4">
+                            <span class="badge badge-info" style="color:black">Azules</span>
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="P4" id="R4P4" value="option1">
+                        <label class="form-check-label" for="R4P4">
+                            <span class="badge badge-warning">Amarillos</span>
+                        </label>
+                    </div>
+                </div>
+            </li>
+
+            <!-- ############################################# - PREGUNTA 5 - ###########################################-->
+            <li class="list-group-item">
+                <div class="preguntas">
+                    <h5>5.- ¿Qué afirmación es verdadera?</h5>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="P5" id="R1P5" value="option1">
+                        <label class="form-check-label" for="R1P5">
+                            El niño de la raqueta es pelirrojo
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="P5" id="R2P5" value="option1">
+                        <label class="form-check-label" for="R2P5">
+                            Hay 5 niños en la imagen
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="P5" id="R3P5" value="option1">
+                        <label class="form-check-label" for="R3P5">
+                            La niña del papalote está triste
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="P5" id="R4P5" value="option1">
+                        <label class="form-check-label" for="R4P5">
+                            El niño de la bicicleta usa gorra
+                        </label>
+                        <div class="r" id="R5"></div>
+                    </div>
+                </div>
+            </li>
+
+            <!-- ############################################# - PREGUNTA 6 - ###########################################-->
+            <li class="list-group-item">
+                <div class="preguntas">
+                    <h5>6.- ¿Que colores tiene el papalote?</h5>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="P6" id="R1P6" value="option1">
+                        <label class="form-check-label" for="R1P6">
+                            <span class="badge badge-warning">Amarillo</span>
+                            <span class="badge badge-info" style="color:black">Azul</span>
+                            <span class="badge badge-danger" style="color:black">Rojo</span>
+                        </label></label>
+                        <div class="r" id="R6"></div>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="P6" id="R2P6" value="option1">
+                        <label class="form-check-label" for="R2P6">
+                            <span class="badge badge-info" style="color:black">Azul</span>
+                            <span class="badge badge-light">Blanco</span>
+                            <span class="badge badge-dark">Negro</span>
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="P6" id="R3P6" value="option1">
+                        <label class="form-check-label" for="R3P6">
+                            <span class="badge badge-warning">Amarillo</span>
+                            <span class="badge badge-info" style="color:black">Azul</span>
+                            <span class="badge badge-light">Blanco</span>
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="P6" id="R4P6" value="option1">
+                        <label class="form-check-label" for="R4P6">
+                            <span class="badge badge-warning">Amarillo</span>
+                            <span class="badge badge-danger" style="color:black">Rojo</span>
+                            <span class="badge badge-dark">Negro</span>
+                        </label>
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+        <button type="button" class="btn btn-primary btn-calificar" onclick="calificar()">Calificar</button>
+    </div>
+
 </div>
 <!--################################################################################################################-->
 
 </body>
+<script type="application/javascript" src="http://www.dadbox.mx/libs/jquery/jquery-3.3.1.js"></script>
 <script type="application/javascript" src="http://www.dadbox.mx/libs/bootstrap/js/bootstrap.js"></script>
-<script type="application/javascript" src="http://www.dadbox.mx/libs/jquery/jquery-3.3.1.min.js"></script>
+<script type="application/javascript" src="js/app.js"></script>
 </html>
