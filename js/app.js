@@ -10,6 +10,7 @@ function calificar() {
 
 function comenzar() {
     $(".img").css("display", "block");
+    $("#card").css("width", "700px");
     $(".tarjeta").css("display", "none");
     setTimeout(function () {
         $("#juego1").css("display", "none");
